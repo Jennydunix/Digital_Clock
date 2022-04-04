@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL CLOCK</title>
+    <!-- Custom fonts from google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- create a container to hold our clock also create an empty div which will be used
+        to display the current time and an id of clock so it will be easier to target -->
+   <section class="container">
+       <div id="clock"></div>
+
+
+       <!-- Adding an input field, so the user will be able to select a date and 
+        time to set the alarm. The important thing here is, that the input type should be 
+        "datetime-local". We'll also give it a name attribute and an onchange event handler.
+        When the onchange event happens (so the value of the input field changes),we will fire 
+        this function setAlarmTime(this.value) that we will implement in our js file just in a 
+        bit. We pass this.value to the function which will give is the new, updated value of the
+        input field. -->
+       
+       <input onchange="setAlarmTime(this.value)" name="alarmTime" type="datetime-local">
+
+
+        <!-- Next we have to add the control buttons. We will wrap these two buttons into 
+        a wrapper div, and give it a css class of controls. Inside that we'll add two 
+        buttons, "Set alarm" and "Clear alarm". Besides the css classes, we add click 
+        event hanler functions.We will create the functions: setAlarm() and clearAlarm() 
+        in javascript later -->
+
+       <div class="controls">
+        <button onclick="setAlarm()" class="button set-alarm">Set alarm</button>
+        <button onclick="clearAlarm()" class="button clear-alarm">Clear alarm</button>
+    </div>
+
+   </section>
+
+   <script src="index.js"></script>
+</body>
+</html>
